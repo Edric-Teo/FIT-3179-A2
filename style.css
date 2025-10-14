@@ -1,0 +1,12 @@
+#title {
+    text-align: center;
+    font-family: "Squada One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+}
+
+#display_center {
+    display: flex;
+    justify-content: center;
+}
