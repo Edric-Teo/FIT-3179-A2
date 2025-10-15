@@ -56,7 +56,8 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/major-tournaments.csv"
+              "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/major-tournaments.csv",
+              "format": {"type": "csv"}
             },
             "key": "Country",
             "fields": ["Tournament Name", "Start Date", "End Date", "Prize Pool", "Participating Teams", 
@@ -93,7 +94,7 @@
           }
         },
         "tooltip": [
-          {"field": "Tournament Name", "type": "nominal", "title": "Tournament"},
+          {"field": "Tournament Name", "type": "nominal", "title": "Name"},
           {"field": "parsedStart", "type": "temporal", "title": "Start Date", "format": "%d %b %Y"},
           {"field": "parsedEnd", "type": "temporal", "title": "End Date", "format": "%d %b %Y"},
           {"field": "Prize Pool", "type": "quantitative", "title": "Prize Pool (USD)"},
@@ -112,7 +113,7 @@
       "mark": {"type": "geoshape", "stroke": "black", "opacity":0.6, "strokeWidth": 1, "fill": null}
     }
   ],
-  "width": 1400,
-  "height": 700,
+  "width": 1000,
+  "height": 500,
   "projection": {"type": "naturalEarth1"}
 }
