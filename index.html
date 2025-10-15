@@ -13,13 +13,13 @@
         <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-        <script src="vega-lite.js"></script>
 
         <title>Counter-Strike Tournament Locations around the World</title>
 </head>
 <body>
-    <h1 id="title">COUNTER-STRIKE MAJORS WORLDWIDE</h1>
-    <div id="icons">
+    <h1 id="title">RECENT COUNTER-STRIKE MAJORS WORLDWIDE</h1>
+    <div class="tournament-overlay">
+    <!-- <div id="iconsUpper">
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/DH13.png?raw=true" alt="DH13 Icon" height="60px" width="60px" id="dh13">
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/ESL-Kato14.png?raw=true" alt="ESL Kato14 Icon" height="60px" width="60px" id="k14">
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/ESL-Cologne14.png?raw=true" alt="ESL Cologne14 Icon" height="60px" width="60px" id="c14">
@@ -32,9 +32,11 @@
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/EL17.png?raw=true" alt="EL17 Icon" height="60px" width="60px" id="el17">
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/PGL17.png?raw=true" alt="PGL17 Icon" height="60px" width="60px" id="pgl17">
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/EL18.png?raw=true" alt="EL18 Icon" height="60px" width="60px" id="el18">
+    </div> -->
+    <div id="iconsLower">
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/FACEIT18.png?raw=true" alt="FACEIT18 Icon" height="60px" width="60px" id="faceit18">
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/IEM19.png?raw=true" alt="IEM19 Icon" height="60px" width="60px" id="iem19">
-        <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/SL19.png?raw=true" alt="SL19 Icon" height="60px" width="60px" id="sl19">
+        <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/SL19.png?raw=true" alt="SL19 Icon" height="60px" width="60px" id="sl19">  
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/PGL21.png?raw=true" alt="PGL21 Icon" height="60px" width="60px" id="pgl21">
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/PGL22.png?raw=true" alt="PGL22 Icon" height="60px" width="60px" id="pgl22">
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/IEM22.png?raw=true" alt="IEM22 Icon" height="60px" width="60px" id="iem22">
@@ -45,9 +47,15 @@
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/SL25.png?raw=true" alt="SL25 Icon" height="60px" width="60px" id="sl25">
         <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/IEM26.png?raw=true" alt="IEM26 Icon" height="60px" width="60px" id="iem26">
     </div>
+
     <div id="display_center">
         <div id="map"></div>
     </div> 
+    <script src="vega-lite.js"></script>
+
+
+    <script src="events.js"></script>
+    </div>
 
 </body>
 
