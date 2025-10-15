@@ -10,6 +10,30 @@
     "anchor": "start",
     "color": "#000000"
   },  
+  "params": [
+    {
+      "name": "menuYear",
+      "value": 2025,
+      "bind": {
+        "name": "Select Year: ",
+        "input": "select",
+        "options": [
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    }
+  ],
   "layer": [
     {
       "params": [
@@ -20,11 +44,11 @@
       ],
       
       "data": {"sphere": true},
-      "mark": {"type": "geoshape", "fill": "lightblue", "opacity": 0.6}
+      "mark": {"type": "geoshape", "fill": "#00A2E8", "opacity": 0.6}
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-HW9/refs/heads/main/ne_10m_admin_0_countries_lakes.json",
+        "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/ne_10m_admin_0_countries_lakes.json",
         "format": {"type": "topojson", "feature": "ne_10m_admin_0_countries_lakes"}
       },
       "transform": [
@@ -32,30 +56,48 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-HW9/refs/heads/main/major-tournamentsv1.csv"
+              "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/major-tournaments.csv"
             },
             "key": "Country",
-            "fields": ["Location","Country", "Winner"]
+            "fields": ["Tournament Name", "Start Date", "End Date", "Prize Pool", "Participating Teams", 
+                        "Location","Country", "Winner"]
           },
-          "default": 0
+          "default": null
         },
         {
-          "calculate": "datum.Country != null ? 'Yes' : 'No'",
-          "as": "Has_Hosted"
+          "calculate": "timeParse(datum['Start Date'], '%d-%b-%y')",
+          "as": "parsedStart"
+        },
+        {
+          "calculate": "timeParse(datum['End Date'], '%d-%b-%y')",
+          "as": "parsedEnd"
+        },
+        {
+          "calculate": "datum.parsedStart ? year(datum.parsedStart) : null",
+          "as": "HostYear"
+        },
+        {
+          "calculate": "(datum.HostYear !== null && datum.HostYear == menuYear) ? 'Selected' : (datum.Country != null ? 'Other Host' : 'No Host')",
+          "as": "HostStatus"
         }
       ],
       "mark": {"type": "geoshape", "stroke": "black"},
       "encoding": {
         "color": {
-          "field": "Has_Hosted",
+          "field": "HostStatus",
           "type": "nominal",
-          "legend": {"title": "Have Hosted S-Tier Tournament?"},
+          "legend": {"title": "Host Status"},
           "scale": {
-            "domain": ["Yes", "No"],
-            "range": ["#FBAC18", "lightgrey"]
+            "domain": ["Selected", "Other Host","No Host"],
+            "range": ["#FBAC18", "#878787", "#DBDBDB"]
           }
-        }, 
+        },
         "tooltip": [
+          {"field": "Tournament Name", "type": "nominal", "title": "Tournament"},
+          {"field": "parsedStart", "type": "temporal", "title": "Start Date", "format": "%d %b %Y"},
+          {"field": "parsedEnd", "type": "temporal", "title": "End Date", "format": "%d %b %Y"},
+          {"field": "Prize Pool", "type": "quantitative", "title": "Prize Pool (USD)"},
+          {"field": "Participating Teams", "type": "quantitative", "title": "No. of Teams"},
           {"field": "Location", "type": "nominal", "title": "Location"},
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
           {"field": "Winner", "type": "nominal", "title": "Latest Winner"}
@@ -64,10 +106,10 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-HW9/refs/heads/main/ne_110m_graticules_30.json",
+        "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/ne_110m_graticules_30.json",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
-      "mark": {"type": "geoshape", "stroke": "black", "opacity":0.9, "strokeWidth": 1, "fill": null}
+      "mark": {"type": "geoshape", "stroke": "black", "opacity":0.6, "strokeWidth": 1, "fill": null}
     }
   ],
   "width": 1400,
