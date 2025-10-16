@@ -24,35 +24,137 @@
             "as": "endDate"
         }
     ],
-    "mark": {
-        "type": "line",
-        "point": {
-            "filled": false,
-            "fill": "white"
+    "layer": [{
+        "mark": {
+            "type": "line",
+            "point": {
+                "filled": false,
+                "fill": "white"
+            }
+        },
+        "encoding": {
+            "x": {"timeUnit": "yearmonth","field": "startDate","type": "temporal","title": "Timeline","axis": {"format": "%m-%y"}},
+            "y": {"field": "Prize Pool","type": "quantitative", "scale": {"domain": [0, 2400000]}},
+            "color": {"field": "symbol","type": "nominal", "legend": null},
+            "tooltip": [
+                {
+                    "field": "Tournament Name",
+                    "type": "nominal",
+                    "title": "Tournament Name"
+                },
+                {
+                    "field": "startDate",
+                    "type": "temporal",
+                    "title": "Start Date"
+                },
+                {
+                    "field": "endDate",
+                    "type": "temporal",
+                    "title": "End Date"
+                }
+            ]
         }
     },
-    "encoding": {
-        "x": {"timeUnit": "yearmonth","field": "startDate","type": "temporal","title": "Timeline","axis": {"format": "%m-%y"}},
-        "y": {"field": "Prize Pool","type": "quantitative", "scale": {"domain": [0, 2400000]}},
-        "color": {"field": "symbol","type": "nominal", "legend": null},
-        "tooltip": [
+    {
+        "data": {
+            "values": [
+                {
+                    "Tournament Name": "PGL Major Stockholm 2021",
+                    "Prize Pool": 2000000,
+                    "Date": "03-Oct-21"
+                }
+            ]
+        },
+        "transform": [
             {
-                "field": "Tournament Name",
-                "type": "nominal",
-                "title": "Tournament Name"
+                "calculate": "timeParse(datum.Date, '%d-%b-%y')",
+                "as": "date"
+            }
+        ],
+        "layer": [
+            {
+                "mark": {
+                    "type": "point",
+                    "filled": false,
+                    "color": "red",
+                    "size": 150
+                },
+                "encoding": {
+                    "x": {"field": "date", "type": "temporal"},
+                    "y": {"field": "Prize Pool", "type": "quantitative"}
+                }
             },
             {
-                "field": "startDate",
-                "type": "temporal",
-                "title": "Start Date"
+                "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "dx": 12,
+                    "dy": -12,
+                    "fontSize": 12,
+                    "opacity": 1
+                },
+                "encoding": {
+                    "x": {"field": "date", "type": "temporal"},
+                    "y": {"field": "Prize Pool", "type": "quantitative"},
+                    "text": {
+                        "value": "This major combined its prize pool with"
+                    }
+                }
             },
             {
-                "field": "endDate",
-                "type": "temporal",
-                "title": "End Date"
+                "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "dx": 14,
+                    "dy": 0,
+                    "fontSize": 12,
+                    "opacity": 1
+                },
+                "encoding": {
+                    "x": {"field": "date", "type": "temporal"},
+                    "y": {"field": "Prize Pool", "type": "quantitative"},
+                    "text": {
+                        "value": "the previously cancelled 2020 Rio major."
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "dx": 14,
+                    "dy": 12,
+                    "fontSize": 12,
+                    "opacity": 1
+                },
+                "encoding": {
+                    "x": {"field": "date", "type": "temporal"},
+                    "y": {"field": "Prize Pool", "type": "quantitative"},
+                    "text": {
+                        "value": "So it became 2 million USD instead"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "dx": 14,
+                    "dy": 24,
+                    "fontSize": 12,
+                    "opacity": 1
+                },
+                "encoding": {
+                    "x": {"field": "date", "type": "temporal"},
+                    "y": {"field": "Prize Pool", "type": "quantitative"},
+                    "text": {
+                        "value": "of 1 million USD."
+                    }
+                }
             }
         ]
-    },
+    }
+],
     "width": 1000,
     "height": 600
 }
