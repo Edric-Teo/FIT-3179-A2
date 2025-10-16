@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+    "description": "Prize Pool of Counter-Strike Tournaments over the Years",
+   "title": {
+        "text": "Prize Pool of Counter-Strike Tournaments over the Years",
+        "subtitle": "Hover over a country to see the latest winner of the latest tournament hosted there",
+        "font": "Squada One",
+        "fontWeight": "normal",
+        "fontSize": 24,
+        "subtitleFontSize": 16,
+        "anchor": "start",
+        "color": "#000000"
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/major-tournaments.csv"
+    },
+    "transform": [
+        {
+            "calculate": "timeParse(datum['Start Date'], '%d-%b-%y')",
+            "as": "startDate"
+        },
+        {
+            "calculate": "timeParse(datum['End Date'], '%d-%b-%y')",
+            "as": "endDate"
+        }
+    ],
+    "mark": {
+        "type": "line",
+        "point": {
+            "filled": false,
+            "fill": "white"
+        }
+    },
+    "encoding": {
+        "x": {"timeUnit": "yearmonth","field": "startDate","type": "temporal","title": "Timeline","axis": {"format": "%m-%y"}},
+        "y": {"field": "Prize Pool","type": "quantitative", "scale": {"domain": [0, 2400000]}},
+        "color": {"field": "symbol","type": "nominal", "legend": null},
+        "tooltip": [
+            {
+                "field": "Tournament Name",
+                "type": "nominal",
+                "title": "Tournament Name"
+            },
+            {
+                "field": "startDate",
+                "type": "temporal",
+                "title": "Start Date"
+            },
+            {
+                "field": "endDate",
+                "type": "temporal",
+                "title": "End Date"
+            }
+        ]
+    },
+    "width": 1000,
+    "height": 600
+}
