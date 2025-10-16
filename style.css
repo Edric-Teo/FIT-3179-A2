@@ -6,7 +6,50 @@
     font-size: 70px;
 }
 
+body {
+    background-color: #FBAC18;
+}
+
+.tournament-overlay {
+    background-color: #28397F;
+    
+    padding: 15px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+#iconsUpper, #iconsLower {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    transition: transform 0.3s;
+}
+
+#iconsUpper img,
+#iconsLower img {
+    transition: transform 0.5s;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#iconsUpper img:hover,
+#iconsLower img:hover {
+    transform: scale(1.2);
+}
+
 #display_center {
     display: flex;
     justify-content: center;
+}
+
+/* Change the year label to white*/
+label {
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
 }

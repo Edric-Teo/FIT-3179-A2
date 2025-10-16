@@ -9,7 +9,7 @@
     "subtitleFontSize": 16,
     "anchor": "start",
     "color": "#000000"
-  },  
+  },
   "params": [
     {
       "name": "menuYear",
@@ -18,11 +18,6 @@
         "name": "Select Year: ",
         "input": "select",
         "options": [
-          2013,
-          2014,
-          2015,
-          2016,
-          2017,
           2018,
           2019,
           2021,
