@@ -12,3 +12,8 @@ var vg_3 = "HLTV_ratings.json";
 vegaEmbed("#hltv_radarchart", vg_3).then(function(result) {
 
 }).catch(console.error);
+
+var vg_4 = "scatterplot_kd_rating_hltv1.json";
+vegaEmbed("#scatterplot_kd_rating_hltv1", vg_4).then(function(result) {
+    
+}).catch(console.error);
