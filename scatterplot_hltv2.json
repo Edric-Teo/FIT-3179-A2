@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing HLTV 2.0 Rating vs K/D Ratio.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/hltv_playerStats-complete.csv"
+  },
+  "hconcat": [
+    {
+      "width": 300,
+      "height": 300,
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "rating",
+          "type": "quantitative",
+          "title": "HLTV 2.0 Rating",
+          "scale": {"domain": [0.7,1.4]}
+        },
+        "y": {
+          "field": "kast",
+          "type": "quantitative",
+          "title": "Kills, Assists, Survived, and Traded (KAST)%",
+          "scale": {"domain": [55, 85]}
+        }
+      }
+    },
+    {
+      "width": 300,
+      "height": 300,
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "rating",
+          "type": "quantitative",
+          "title": "HLTV 2.0 Rating",
+          "scale": {"domain": [0.7,1.4]}
+        },
+        "y": {
+          "field": "rounds_played",
+          "type": "quantitative",
+          "title": "Total Rounds Played",
+          "scale": {"domain": [0, 70000]}
+        }
+      }
+    },
+    {
+      "width": 300,
+      "height": 300,
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "rating",
+          "type": "quantitative",
+          "title": "HLTV 2.0 Rating",
+          "scale": {"domain": [0.7,1.4]}
+        },
+        "y": {
+          "field": "total_deaths",
+          "type": "quantitative",
+          "title": "Total Deaths",
+          "scale": {"domain": [0, 45000]}
+        }
+      }
+    }
+  ]
+}
