@@ -63,14 +63,14 @@
         },
         {
           "calculate": "timeParse(datum['Start Date'], '%d-%b-%y')",
-          "as": "parsedStart"
+          "as": "startDate"
         },
         {
           "calculate": "timeParse(datum['End Date'], '%d-%b-%y')",
-          "as": "parsedEnd"
+          "as": "endDate"
         },
         {
-          "calculate": "datum.parsedStart ? year(datum.parsedStart) : null",
+          "calculate": "datum.startDate ? year(datum.startDate) : null",
           "as": "HostYear"
         },
         {
@@ -91,8 +91,8 @@
         },
         "tooltip": [
           {"field": "Tournament Name", "type": "nominal", "title": "Name"},
-          {"field": "parsedStart", "type": "temporal", "title": "Start Date", "format": "%d %b %Y"},
-          {"field": "parsedEnd", "type": "temporal", "title": "End Date", "format": "%d %b %Y"},
+          {"field": "startDate", "type": "temporal", "title": "Start Date", "format": "%d %b %Y"},
+          {"field": "endDate", "type": "temporal", "title": "End Date", "format": "%d %b %Y"},
           {"field": "Prize Pool", "type": "quantitative", "title": "Prize Pool (USD)"},
           {"field": "Participating Teams", "type": "quantitative", "title": "No. of Teams"},
           {"field": "Location", "type": "nominal", "title": "Location"},
