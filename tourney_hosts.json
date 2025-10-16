@@ -93,7 +93,6 @@
           {"field": "Tournament Name", "type": "nominal", "title": "Name"},
           {"field": "startDate", "type": "temporal", "title": "Start Date", "format": "%d %b %Y"},
           {"field": "endDate", "type": "temporal", "title": "End Date", "format": "%d %b %Y"},
-          {"field": "Prize Pool", "type": "quantitative", "title": "Prize Pool (USD)"},
           {"field": "Participating Teams", "type": "quantitative", "title": "No. of Teams"},
           {"field": "Location", "type": "nominal", "title": "Location"},
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
