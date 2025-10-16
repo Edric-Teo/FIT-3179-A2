@@ -12,7 +12,6 @@ body {
 
 .tournament-overlay {
     background-color: #28397F;
-    
     padding: 15px;
     border-width: 2px;
     border-style: solid;
@@ -22,24 +21,8 @@ body {
     max-width: 1200px;
 }
 
-#iconsUpper, #iconsLower {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-    transition: transform 0.3s;
-}
-
-#iconsUpper img,
-#iconsLower img {
-    transition: transform 0.5s;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-#iconsUpper img:hover,
-#iconsLower img:hover {
-    transform: scale(1.2);
+#tourney_map, #prizepool_linechart {
+    padding-left: 35px;
 }
 
 #display_center {
@@ -47,7 +30,27 @@ body {
     justify-content: center;
 }
 
-/* Change the year label to white*/
+/*animation to enlarge and return to original size for tournament icons*/
+#iconsLower {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    transition: transform 0.3s;
+}
+
+#iconsLower img {
+    transition: transform 0.5s;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#iconsLower img:hover {
+    transform: scale(1.2);
+}
+
+
+/*changes select year label to white*/
 label {
     color: white;
     font-size: 14px;
