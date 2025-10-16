@@ -3,7 +3,7 @@
     "description": "Prize Pool of Counter-Strike Tournaments over the Years",
    "title": {
         "text": "Prize Pool of Counter-Strike Tournaments over the Years",
-        "subtitle": "Hover over a country to see the latest winner of the latest tournament hosted there",
+        "subtitle": "Hover over a point to see the tournament details",
         "font": "Squada One",
         "fontWeight": "normal",
         "fontSize": 24,
@@ -51,6 +51,11 @@
                     "field": "endDate",
                     "type": "temporal",
                     "title": "End Date"
+                },
+                {
+                    "field": "Prize Pool",
+                    "type": "quantitative",
+                    "title": "Prize Pool in USD"
                 }
             ]
         }
