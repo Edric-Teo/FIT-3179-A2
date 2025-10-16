@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing HLTV 2.0 Rating vs K/D Ratio.",
+  "title": {
+    "text":"HLTV2.0 Statistics of Counter Strike Pro Players",
+    "subtitle": "Use the sliders to adjust the range of HLTV 2.0 Rating displayed",
+    "font": "Squada One",
+    "fontWeight": "normal",
+    "fontSize": 24,
+    "subtitleFontSize": 16,
+    "anchor": "start",
+    "color": "#000000"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/hltv_playerStats-complete.csv"
+  },
+  "hconcat": [
+    {
+      "width": 250,
+      "height": 300,
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "rating",
+          "type": "quantitative",
+          "title": "HLTV 2.0 Rating",
+          "scale": {"domain": [0.7,1.3]}
+        },
+        "y": {
+          "field": "kd_ratio",
+          "type": "quantitative",
+          "title": "K/D Ratio",
+          "scale": {"domain": [0.5, 1.6]}
+        }
+      }
+    },
+    {
+      "width": 250,
+      "height": 300,
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "rating",
+          "type": "quantitative",
+          "title": "HLTV 2.0 Rating",
+          "scale": {"domain": [0.7,1.3]}
+        },
+        "y": {
+          "field": "impact",
+          "type": "quantitative",
+          "title": "Impact",
+          "scale": {"domain": [0, 1.5]}
+        }
+      }
+    },
+    {
+      "width": 250,
+      "height": 300,
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "rating",
+          "type": "quantitative",
+          "title": "HLTV 2.0 Rating",
+          "scale": {"domain": [0.7,1.3]}
+        },
+        "y": {
+          "field": "total_kills",
+          "type": "quantitative",
+          "title": "Total Kills",
+          "scale": {"domain": [0, 50000]}
+        }
+      }
+    }
+  ]
+}
