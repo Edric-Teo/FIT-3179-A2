@@ -107,8 +107,127 @@
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
       "mark": {"type": "geoshape", "stroke": "black", "opacity":0.6, "strokeWidth": 1, "fill": null}
-    }
+    },
+    {
+    "data": {
+      "values": [
+        {
+          "Country": "China",
+          "Longitude": 100.1954,
+          "Latitude": 30.8617
+        }
+      ]
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "rect",
+          "align": "left",
+          "dx": 5,
+          "dy": -15,
+          "width": 180,
+          "height": 50,
+          "fill": "lightgrey",
+          "stroke": "black"
+        },
+        "encoding": {
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"}
+        }
+      },
+      {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": -5,
+        "fontSize": 12,
+        "color": "black"
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "text": {"value": "China is the only country in Asia"}
+      }
+      },
+      {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": 10,
+        "fontSize": 12,
+        "color": "black"
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "text": {"value": " that has hosted a Major"}
+      }
+      }
+    ]
+    },
+    {
+    "data": {
+      "values": [
+        {
+          "Country": "Brazil",
+          "Longitude": -51.9253,
+          "Latitude": -14.2350
+        }
+      ]
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "rect",
+          "align": "left",
+          "dx": 5,
+          "dy": -15,
+          "width": 235,
+          "height": 50,
+          "fill": "lightgrey",
+          "stroke": "black"
+        },
+        "encoding": {
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"}
+        }
+      },
+      {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": -5,
+        "fontSize": 12,
+        "color": "black"
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "text": {"value": "Brazil is the only country in South America"}
+      }
+      },
+      {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": 10,
+        "fontSize": 12,
+        "color": "black"
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "text": {"value": " that has hosted a Major"}
+      }
+      }
+    ]
+  }
   ],
+  
   "width": 1000,
   "height": 550,
   "projection": {"type": "naturalEarth1"}
