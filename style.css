@@ -15,7 +15,7 @@ h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 30px;
+    font-size: 42px;
     color: white;
 }
 
@@ -28,6 +28,25 @@ p {
     color: white;
 }
 
+* {
+    box-sizing: border-box;
+}
+/*to create a multi-column layout */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    text-align: left; /* ensure text inside columns is left-aligned */
+}
+
+/* clearfix for .row */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*to separate visualisation sections*/
 .tournament-overlay {
     background-color: #28397F;
     padding: 15px;
