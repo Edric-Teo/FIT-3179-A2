@@ -22,3 +22,9 @@ var vg_5 = "scatterplot_hltv2.json";
 vegaEmbed("#scatterplot_hltv2", vg_5).then(function(result) {
     
 }).catch(console.error);
+
+var vg_6 = "weapons_donut.json";
+vegaEmbed("#weapons_donut", vg_6).then(function(result) {
+
+}).catch(console.error);
+

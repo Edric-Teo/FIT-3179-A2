@@ -19,13 +19,13 @@
 
 <body>
     <div class="title">
-    <h1 id="title">RECENT COUNTER-STRIKE <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/cs2logo.png?raw=true" alt="CS2 Logo" height="60px" width="60px" id="cs2logo"> MAJORS WORLDWIDE
+    <h1 id="title"><em>RECENT COUNTER-STRIKE <img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/cs2logo.png?raw=true" alt="CS2 Logo" height="60px" width="60px" id="cs2logo"> MAJORS WORLDWIDE </em>
     </h1>
     </div>
     <div class="tournament-overlay">
         <!-- Show tournament icons -->
     <div id="iconsLower">
-        <p> PAST MAJORS:</p><a href="https://liquipedia.net/counterstrike/FACEIT/2018/Major" target="=_blank" rel="noopener noreferrer"><img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/FACEIT18.png?raw=true" title="FACEIT Major: London 2018" alt="FACEIT18 Icon" height="60px" width="60px" id="faceit18"></a>
+        <p> <b>PAST MAJORS:</b></p><a href="https://liquipedia.net/counterstrike/FACEIT/2018/Major" target="=_blank" rel="noopener noreferrer"><img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/FACEIT18.png?raw=true" title="FACEIT Major: London 2018" alt="FACEIT18 Icon" height="60px" width="60px" id="faceit18"></a>
         <a href="https://liquipedia.net/counterstrike/Intel_Extreme_Masters/Season_XIII/World_Championship" target="=_blank" rel="noopener noreferrer"><img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/IEM19.png?raw=true" title="Intel Extreme Masters XIII - Katowice Major 2019" alt="IEM19 Icon" height="60px" width="60px" id="iem19"></a>
         <a href="https://liquipedia.net/counterstrike/StarLadder/2019/Major" target="=_blank" rel="noopener noreferrer"><img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/SL19.png?raw=true" title="StarLadder Berlin Major 2019" alt="SL19 Icon" height="60px" width="60px" id="sl19"></a>
         <a href="https://liquipedia.net/counterstrike/PGL/2021/Stockholm" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/PGL21.png?raw=true" title="PGL Major Stockholm 2021" alt="PGL21 Icon" height="60px" width="60px" id="pgl21"></a>
@@ -38,7 +38,7 @@
     </div>
 
     <div id="iconsLower">
-        <p>UPCOMING MAJORS:</p><a href="https://liquipedia.net/counterstrike/StarLadder/2025/Major" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/SL25.png?raw=true" title="(Upcoming) StarLadder Budapest Major 2025" alt="SL25 Icon" height="60px" width="60px" id="sl25"></a>
+        <p><em>UPCOMING MAJORS:</em></p><a href="https://liquipedia.net/counterstrike/StarLadder/2025/Major" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/SL25.png?raw=true" title="(Upcoming) StarLadder Budapest Major 2025" alt="SL25 Icon" height="60px" width="60px" id="sl25"></a>
         <a href="https://liquipedia.net/counterstrike/Intel_Extreme_Masters/2026/Cologne" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Edric-Teo/FIT-3179-A2/blob/main/images/IEM26.png?raw=true" title="(Upcoming) Intel Extreme Masters Cologne Major 2026" alt="IEM26 Icon" height="60px" width="60px" id="iem26"></a>
     </div>
 
@@ -51,6 +51,7 @@
 
     <!-- Prize Pool Line Chart -->
     <div class="tournament-overlay">
+        <h2>Major Prize Pool Distributions (2013-2026)</h2>
         <div id="display_center">
         <div id="prizepool_linechart"></div>
         </div>
@@ -66,13 +67,29 @@
     <!-- Scatterplot HLTV K/D Ratio vs Rating -->
     <div class="tournament-overlay">
         <h2> What is HTLV 2.0 Rating?</h2>
-        <p> Rating is a relatively simple concept based <br>
-            on <italic>statistics</italic> that HLTV introduced back in <bold>CS:GO</bold>.<br>
-            It aims to <italic>improve</italic> upon the skewed <br>
-            K/D Ratio used by Valve to rank <br>
-            player's performance throughout a match. <br>
-            It ranges from 0 to 2.0 with <br>
-            1.0 being the average.</p>
+        <div class="row">
+            <div class="column">
+                <p> HLTV 2.0 Rating is a relatively simple concept  <br>
+                based on <u><em>statistics</em></u> that HLTV introduced back<br>
+                in <b>CS:GO</b>. It aims to <b>improve</b> upon the<br>
+                skewed K/D Ratio used by Valve to rank <br>
+                player's performance throughout a match. <br>
+                It ranges from 0 to 2.0 with <br>
+                1.0 being the average.</p>
+            </div>
+
+            <div class="column">
+                <p> For example, K/D can be skewed towards<br>
+                a player that <b>prefers to play safe</b>. So,<br>
+                they <em>may</em> die less often and get a <b>higher</b> <br>
+                K/D Ratio as they would have more <br>
+                kills than deaths in that match. <br>
+                It would be better to include <b>additional</b> <br>
+                <b>information</b> to <em>prove</em> that the player is <br>
+                performing better than his peers or opponents.</p>
+            </div>
+
+        </div>
         <div id="display_center">
             <div id="scatterplot_hltv1"></div>
         </div>
@@ -80,6 +97,25 @@
             <div id="scatterplot_hltv2"></div>
             
         </div>
+    </div>
+
+    <!-- Most Common Weapons Used -->
+    <div class="tournament-overlay">
+        <h2>Most Common Weapons Used by Pro Players</h2>
+        <div id="display_center">
+        <div id="weapons_donut"></div>
+        </div>
+
+    <p>80% of the chart contains either Rifles or Sniper<br>
+        Rifles that can be used in game. The main rifles: <br>
+        AK-47 and M4A1-S are widely used as they are <br>
+        cost-effective and versatile in most situations.<br>
+        The starting pistol for CT side (USP-S) is <br>
+        an outlier in this chart as it is free <br>
+        weapon given to CT side players at the<br>
+        start of each round.
+
+    </p>
     </div>
 
     <script src="vega-lite.js"></script>
