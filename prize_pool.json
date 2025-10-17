@@ -55,7 +55,8 @@
                 {
                     "field": "Prize Pool",
                     "type": "quantitative",
-                    "title": "Prize Pool in USD"
+                    "title": "Prize Pool in USD",
+                    "format": "$,.0f"
                 }
             ]
         }
