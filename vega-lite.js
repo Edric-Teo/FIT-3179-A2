@@ -23,8 +23,8 @@ vegaEmbed("#scatterplot_hltv2", vg_5).then(function(result) {
     
 }).catch(console.error);
 
-var vg_6 = "weapons_donut.json";
-vegaEmbed("#weapons_donut", vg_6).then(function(result) {
+var vg_6 = "weapons_radial.json";
+vegaEmbed("#weapons_radial", vg_6).then(function(result) {
 
 }).catch(console.error);
 
