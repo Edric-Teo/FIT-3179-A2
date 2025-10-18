@@ -1,13 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A scatterplot showing HLTV 2.0 Rating vs K/D Ratio.",
+  "description": "A small multiple scatterplot showing HLTV 2.0 Rating vs KAST, Rounds Played, and Total Deaths.",
   "data": {
     "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/hltv_playerStats-complete.csv"
   },
   "hconcat": [
     {
-      "width": 300,
+      "width": 291,
       "height": 300,
+      "layer": [{
       "mark": "point",
       "encoding": {
         "x": {
@@ -25,8 +26,32 @@
       }
     },
     {
-      "width": 300,
+      "mark": {"type": "errorband", "extent": "stdev", "opacity": 0.2},
+      "encoding": {
+        "y": {
+          "field": "kast",
+          "type": "quantitative",
+          "title": "Kills, Assists, Survived, and Traded (KAST)%",
+          "axis": {"format": ".2f"}
+        }
+      }
+    },
+    {
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "field": "kast",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+},
+    {
+      "width": 291,
       "height": 300,
+      "layer": [{
       "mark": "point",
       "encoding": {
         "x": {
@@ -44,8 +69,32 @@
       }
     },
     {
-      "width": 300,
+      "mark": {"type": "errorband", "extent": "stdev", "opacity": 0.2},
+      "encoding": {
+        "y": {
+          "field": "rounds_played",
+          "type": "quantitative",
+          "title": "Total Rounds Played",
+          "axis": {"format": ".2f"}
+        }
+      }
+    },
+    {
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "field": "rounds_played",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+    },
+    {
+      "width": 291,
       "height": 300,
+      "layer": [{
       "mark": "point",
       "encoding": {
         "x": {
@@ -61,6 +110,29 @@
           "scale": {"domain": [5000, 45000]}
         }
       }
+    },
+    {
+      "mark": {"type": "errorband", "extent": "stdev", "opacity": 0.2},
+      "encoding": {
+        "y": {
+          "field": "total_deaths",
+          "type": "quantitative",
+          "title": "Total Deaths",
+          "axis": {"format": ".2f"}
+        }
+      }
+    },
+    {
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "field": "total_deaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A scatterplot showing HLTV 2.0 Rating vs K/D Ratio.",
+  "description": "A small multiple scatterplot showing HLTV 2.0 Rating vs K/D Ratio, Impact, and Total Kills.",
   "title": {
     "text":"HLTV2.0 Statistics of Counter-Strike Pro Players",
     "font": "Squada One",
@@ -17,6 +17,8 @@
     {
       "width": 300,
       "height": 300,
+      "layer": [{
+
       "mark": "point",
       "encoding": {
         "x": {
@@ -34,8 +36,32 @@
       }
     },
     {
+      "mark": {"type": "errorband", "extent": "stdev", "opacity": 0.2},
+      "encoding": {
+        "y": {
+          "field": "kd_ratio",
+          "type": "quantitative",
+          "title": "K/D Ratio",
+          "axis": {"format": ".2f"}
+        }
+      }
+    },
+    {
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "field": "kd_ratio",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+    },
+    {
       "width": 300,
       "height": 300,
+      "layer": [{
       "mark": "point",
       "encoding": {
         "x": {
@@ -53,8 +79,32 @@
       }
     },
     {
+      "mark": {"type": "errorband", "extent": "stdev", "opacity": 0.2},
+      "encoding": {
+        "y": {
+          "field": "impact",
+          "type": "quantitative",
+          "title": "Impact",
+          "axis": {"format": ".2f"}
+        }
+      }
+    },
+    {
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "field": "impact",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+    },
+    {
       "width": 300,
       "height": 300,
+      "layer": [{
       "mark": "point",
       "encoding": {
         "x": {
@@ -70,6 +120,29 @@
           "scale": {"domain": [5000, 50000]}
         }
       }
+    },
+    {
+      "mark": {"type": "errorband", "extent": "stdev", "opacity": 0.2},
+      "encoding": {
+        "y": {
+          "field": "total_kills",
+          "type": "quantitative",
+          "title": "Total Kills",
+          "axis": {"format": ".2f"}
+        }
+      }
+    },
+    {
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "field": "total_kills",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
     }
   ]
 }
