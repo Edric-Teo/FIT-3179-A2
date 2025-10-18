@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Countries that have hosted S-Tier Counter-Strike Tournaments",
-    "subtitle": "Hover over a country to see the latest winner of the latest tournament hosted there",
     "font": "Squada One",
     "fontWeight": "normal",
     "fontSize": 24,
@@ -112,8 +111,8 @@
       "values": [
         {
           "Country": "China",
-          "Longitude": 100.1954,
-          "Latitude": 30.8617
+          "Longitude": 125.1954,
+          "Latitude": 20.8617
         }
       ]
     },
@@ -127,7 +126,8 @@
           "width": 180,
           "height": 50,
           "fill": "lightgrey",
-          "stroke": "black"
+          "stroke": "black",
+          "opacity": 0.7
         },
         "encoding": {
           "longitude": {"field": "Longitude", "type": "quantitative"},
@@ -146,7 +146,7 @@
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
-        "text": {"value": "China is the only country in Asia"}
+        "text": {"value": "The first and only major hosted"}
       }
       },
       {
@@ -161,17 +161,16 @@
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
-        "text": {"value": " that has hosted a Major"}
+        "text": {"value": "in Asia was from China"}
       }
       }
-    ]
-    },
+    ]},
     {
     "data": {
       "values": [
         {
           "Country": "Brazil",
-          "Longitude": -51.9253,
+          "Longitude": -165.9253,
           "Latitude": -14.2350
         }
       ]
@@ -186,7 +185,8 @@
           "width": 235,
           "height": 50,
           "fill": "lightgrey",
-          "stroke": "black"
+          "stroke": "black",
+          "opacity": 0.7
         },
         "encoding": {
           "longitude": {"field": "Longitude", "type": "quantitative"},
@@ -205,7 +205,7 @@
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
-        "text": {"value": "Brazil is the only country in South America"}
+        "text": {"value": "Brazil is the first and only country "}
       }
       },
       {
@@ -220,7 +220,7 @@
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
-        "text": {"value": " that has hosted a Major"}
+        "text": {"value": "that has hosted a Major in South America "}
       }
       }
     ]
