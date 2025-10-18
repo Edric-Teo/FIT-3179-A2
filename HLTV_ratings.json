@@ -3,7 +3,7 @@
   "description": "A radar chart example, showing multiple dimensions in a radial layout.",
   "width": 1000,
   "height": 600,
-  "padding": 40,
+  "padding": 30,
   "autosize": {"type": "none", "contains": "padding"},
 
   "signals": [
