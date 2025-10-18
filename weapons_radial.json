@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "A basic radial plot that encodes two values as the angle and radius of an arc.",
+  "width": 800,
+  "height": 600,
+  "data": [
+    {
+      "name": "table",
+      "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/weapons_data.csv",
+      "format": {"type": "csv"},
+      "transform": [
+        {"type": "collect", "sort": {"field": "Kills", "order": "descending"}},
+        {"type": "filter", "expr": "datum.Kills > 250 && datum.Kills < 4000" },
+        {"type": "pie", "field": "Kills" }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "r",
+      "type": "sqrt",
+      "domain": {"data": "table", "field": "Kills"},
+      "zero": true,
+      "range": [100, 300]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "x": {"field": {"group": "width"}, "mult": 0.5},
+          "y": {"field": {"group": "height"}, "mult": 0.5},
+          "startAngle": {"field": "startAngle"},
+          "endAngle": {"field": "endAngle"},
+          "innerRadius": {"value": 20},
+          "outerRadius": {"scale": "r", "field": "Kills"},
+          "stroke": {"value": "#fff"},
+          "tooltip":[{
+            "signal": "datum['Weapon Name'] + ' Kills:' + format(datum.Kills, ',')"
+          }]
+        },
+        "update": {
+          "fill": {"value": "#ccc"}
+        },
+        "hover": {
+          "fill": {"value": "#FBAC18"}
+        }
+        
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "x": {"field": {"group": "width"}, "mult": 0.5},
+          "y": {"field": {"group": "height"}, "mult": 0.5},
+          "radius": {"scale": "r", "field": "Kills", "offset": 20},
+          "theta": {"signal": "(datum.startAngle + datum.endAngle)/2"},
+          "fill": {"value": "white"},
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "text": {"signal": "format(datum.Kills, ',')"},
+          "fontSize": {"value": 20}
+        }
+      }
+    }
+  ]
+}
