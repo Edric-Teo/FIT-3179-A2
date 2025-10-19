@@ -2,8 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
     "description": "Prize Pool of Counter-Strike Tournaments over the Years",
    "title": {
-        "text": "Prize Pool of Counter-Strike Tournaments over the Years",
-        "subtitle": "Hover over a point to see the tournament details",
+        "text": "General Trend of Prize Pool Money is Increasing",
         "font": "Squada One",
         "fontWeight": "normal",
         "fontSize": 24,
