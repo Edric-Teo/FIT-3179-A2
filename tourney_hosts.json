@@ -15,17 +15,10 @@
       "value": 2025,
       "bind": {
         "name": "Select Year: ",
-        "input": "select",
-        "options": [
-          2018,
-          2019,
-          2021,
-          2022,
-          2023,
-          2024,
-          2025,
-          2026
-        ]
+        "input": "range",
+        "min": 2018,
+        "max": 2026,
+        "step": 1
       }
     }
   ],
