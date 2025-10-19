@@ -13,7 +13,8 @@
   "data": [
     {
       "name": "table",
-      "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/hltv_playerStats-complete.csv"
+      "url": "https://raw.githubusercontent.com/Edric-Teo/FIT-3179-A2/refs/heads/main/major-stats.csv",
+      "format": {"type": "csv"}
     },
     {
       "name": "keys",
@@ -21,7 +22,7 @@
       "transform": [
         {
           "type": "aggregate",
-          "groupby": ["key"]
+          "groupby": ["name"]
         }
       ]
     }
@@ -33,7 +34,7 @@
       "type": "point",
       "range": {"signal": "[-PI, PI]"},
       "padding": 0.5,
-      "domain": {"data": "table", "field": "key"}
+      "domain": {"data": "table", "field": "name"}
     },
     {
       "name": "radial",
@@ -41,13 +42,13 @@
       "range": {"signal": "[0, radius]"},
       "zero": true,
       "nice": false,
-      "domain": {"data": "table", "field": "value"},
+      "domain": {"data": "table", "field": "rating"},
       "domainMin": 0
     },
     {
       "name": "color",
       "type": "ordinal",
-      "domain": {"data": "table", "field": "category"},
+      "domain": {"data": "table", "field": "event"},
       "range": {"scheme": "category10"}
     }
   ],
@@ -65,7 +66,7 @@
       "name": "categories",
       "zindex": 1,
       "from": {
-        "facet": {"data": "table", "name": "facet", "groupby": ["category"]}
+        "facet": {"data": "table", "name": "facet", "groupby": ["event"]}
       },
       "marks": [
         {
@@ -75,11 +76,11 @@
           "encode": {
             "enter": {
               "interpolate": {"value": "linear-closed"},
-              "x": {"signal": "scale('radial', datum.value) * cos(scale('angular', datum.key))"},
-              "y": {"signal": "scale('radial', datum.value) * sin(scale('angular', datum.key))"},
-              "stroke": {"scale": "color", "field": "category"},
+              "x": {"signal": "scale('radial', datum.rating) * cos(scale('angular', datum.name))"},
+              "y": {"signal": "scale('radial', datum.rating) * sin(scale('angular', datum.name))"},
+              "stroke": {"scale": "color", "field": "event"},
               "strokeWidth": {"value": 1},
-              "fill": {"scale": "color", "field": "category"},
+              "fill": {"scale": "color", "field": "event"},
               "fillOpacity": {"value": 0.1}
             }
           }
@@ -110,8 +111,8 @@
         "enter": {
           "x": {"value": 0},
           "y": {"value": 0},
-          "x2": {"signal": "radius * cos(scale('angular', datum.key))"},
-          "y2": {"signal": "radius * sin(scale('angular', datum.key))"},
+          "x2": {"signal": "radius * cos(scale('angular', datum.name))"},
+          "y2": {"signal": "radius * sin(scale('angular', datum.name))"},
           "stroke": {"value": "lightgray"},
           "strokeWidth": {"value": 1}
         }
@@ -124,12 +125,12 @@
       "zindex": 1,
       "encode": {
         "enter": {
-          "x": {"signal": "(radius + 5) * cos(scale('angular', datum.key))"},
-          "y": {"signal": "(radius + 5) * sin(scale('angular', datum.key))"},
-          "text": {"field": "key"},
+          "x": {"signal": "(radius + 5) * cos(scale('angular', datum.name))"},
+          "y": {"signal": "(radius + 5) * sin(scale('angular', datum.name))"},
+          "text": {"field": "name"},
           "align": [
             {
-              "test": "abs(scale('angular', datum.key)) > PI / 2",
+              "test": "abs(scale('angular', datum.name)) > PI / 2",
               "value": "right"
             },
             {
@@ -138,10 +139,10 @@
           ],
           "baseline": [
             {
-              "test": "scale('angular', datum.key) > 0", "value": "top"
+              "test": "scale('angular', datum.name) > 0", "value": "top"
             },
             {
-              "test": "scale('angular', datum.key) == 0", "value": "middle"
+              "test": "scale('angular', datum.name) == 0", "value": "middle"
             },
             {
               "value": "bottom"
